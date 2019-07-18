@@ -1,0 +1,140 @@
+.scroll-container {
+  position: fixed;
+  @include column;
+  align-items: center;
+  justify-content: center;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
+  .left {
+    @include scrollable;
+    width: 60%;
+    left: 0;
+    margin-left: 30px;
+    align-items: flex-start;
+    @include column;
+  }
+  .right {
+    @include scrollable;
+    width: 40%;
+    right: 0;
+    margin-right: 30px;
+    align-items: flex-end;
+    @include column;
+  }
+  .article-card {
+    width: 93%;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 3px;
+    background-color: $color-secondary;
+    @include center;
+    @include row;
+    .card-top {
+      @include column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .top-content {
+        margin: 0 5px;
+        .title {
+          color: black;
+          margin-bottom: 8px;
+        }
+        .description {
+          margin-bottom: 5px;
+          color: $color-primary;
+        }
+        .content-body {
+          color: rgba(0, 0, 0, 0.54) !important;
+        }
+        .timestamp {
+          color: rgba(0, 0, 0, 0.54) !important;
+          font-weight: 500;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .card-bottom {
+      @include row;
+      width: 100%;
+      justify-content: space-between;
+      align-self: flex-start;
+      margin-top: 20px;
+      .bottom-author {
+        @include row;
+        align-items: space-between;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          margin-right: 10px;
+        }
+      }
+      .bottom-actions {
+        @include row;
+        @include center;
+        justify-content: space-evenly;
+        width: 30%;
+        .action-follow {
+          @include center;
+          border-radius: 5px;
+          padding: 3px 15px;
+          min-height: 30px !important;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 16px;
+          background-color: $color-secondary;
+          color: $color-primary;
+          &:hover {
+            box-shadow: 0 2px 4px 0 $shadow-primary;
+          }
+          border: 1px solid $shadow-primary;
+        }
+        .action-bookmark {
+          @include center;
+          width: 30px;
+          height: 30px;
+          border-radius: 16px;
+          &:hover {
+            border-color: $shadow-primary;
+            border-style: solid;
+            border-width: 0.5px;
+            box-shadow: 0 2px 4px 0 $shadow-primary;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          cursor: pointer;
+          img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+  .article-image {
+    img {
+      width: 250px;
+      height: auto;
+    }
+  }
+}
+/* Media query for lager devices (computers) */
+
+@media only screen and (min-width: $max-size-desktop) {
+}
+
+/* Media query for mini devices (tablets) */
+
+@media only screen and (min-width: $max-size-mobile) and (max-width: $max-size-tablet) {
+}
+
+/* Media query for small devices (mobiles) */
+
+@media only screen and (max-width: $max-size-mobile) {
+}

@@ -1,0 +1,131 @@
+.body {
+  @include center;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.wrapper {
+  @include card;
+  .title {
+    padding: 1rem 0.75rem 0px 0.75rem;
+    margin-bottom: 0;
+    color: gray;
+    font-family: "Gotham-Light";
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .col-center {
+    @include center;
+    @include column;
+    width: 100%;
+    .header-contain {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      background-image: linear-gradient(
+        to top left,
+        $shadow-primary,
+        $color-primary
+      );
+    }
+    .input-group {
+      @include center;
+      @include column;
+      width: 90%;
+      padding: 1rem;
+      .input {
+        @include input;
+      }
+      .rich-text {
+        align-self: flex-end;
+        margin-top: 20px;
+        color: $color-primary;
+        cursor: pointer;
+      }
+    }
+    .submit-btn {
+      @include button;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+  .social-container {
+    @include row;
+    @include center;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 30px 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.toast {
+  position: absolute;
+  text-align: center;
+  font-family: "Gotham-Light";
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 16px 0;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1;
+  min-width: 30%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+}
+
+.fade {
+  top: 0%;
+  opacity: 0;
+}
+@keyframes fadeInOut {
+  30%,
+  70% {
+    opacity: 1;
+    top: 20%;
+  }
+}
+
+/* Media query for lager devices (computers) */
+
+@media only screen and (min-width: $max-size-desktop) {
+  .wrapper {
+    width: 40%;
+  }
+}
+
+/* Media query for mini devices (tablets) */
+
+@media only screen and (min-width: $max-size-mobile) and (max-width: $max-size-tablet) {
+  .wrapper {
+    width: 80%;
+  }
+  .toast {
+    min-width: 50%;
+  }
+}
+
+/* Media query for small devices (mobiles) */
+
+@media only screen and (max-width: $max-size-mobile) {
+  .wrapper {
+    .col-center {
+      .input-group {
+        width: 100%;
+      }
+    }
+  }
+  .toast {
+    min-width: 90%;
+  }
+}

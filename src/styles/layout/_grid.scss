@@ -1,0 +1,45 @@
+.col-md {
+  @include col;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+@media (min-width: #{$max-size-mobile}px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .col-av {
+    @include col;
+  }
+}
+@media (max-width: #{$max-size-mobile - 1}px) {
+  .col-sm {
+    @include col;
+  }
+  .hide-sm {
+    display: none;
+  }
+}
+
+.main {
+  margin-top: 30px;
+}
+
+.danger {
+  color: red;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  div.center {
+    margin: auto;
+  }
+}
